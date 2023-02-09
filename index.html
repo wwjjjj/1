@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="index.css">
+    <script   src="https://code.jquery.com/jquery-3.1.0.js"></script>
+    <title>Hello</title>
+</head>
+<body>
+    <div class="wrap">
+        <h1>To Erin  </h1>
+        <div id="form-wrap">
+            <form action="">
+
+
+                <div id="autoPlay">
+
+                    <p> &#60?php </p>
+                    <p>while(me->find()){</p>
+                    <p>&nbsp if(me->met() == your->self()){</p>
+                    <p>&nbsp &nbsp print("Hello,world!");</p>
+                    <p>&#160 &#160 &#160}</p>
+                    <p>&#160 &#160 }</p>             
+                    <p>?&#62</p>
+                    <p>&#160&#160&#160&#160&#160&#160&#160&#160 -by Poet.Jacky.W</p>
+                    <!-- <br/>
+                    <p>明月如镜高悬草原映照千年岁月</p>
+                    <br/>
+                    <p>我的琴声呜咽 泪水全无</p>
+                    <br/>
+                    <p>只身打马过草原</p> -->
+
+
+    </div>
+
+<script type="text/javascript">
+$.fn.autoPlay=function(){
+    var $text=$(this);
+    var str=$text.html();
+    var index=0;
+
+
+    var timer=setInterval(function(){
+        var current=str.substr(index,1);                        //截取从index开始的一个字符      
+        if (current=='<') {                                         
+            index=str.indexOf('>',index)+1;                     //indexOf 返回'>'首次出现的位置  并且从index处开始检索
+        }else{
+            index++;                                            //index每100ms加一
+        }
+        $text.html(str.substring(0,index)+(index & 1 ?'_':'')); //substring 截取0到index的字符
+            if(index >= str.length){
+                clearInterval(timer);
+            }
+    },100)
+}
+
+$("#autoPlay").autoPlay();
+</script>
+
+<!-- 
+                <p>Hello world</p>
+                <p>Hello world</p>
+                <p>Hello world</p>
+                <p>Hello world</p>
+                <p>Hello world</p>
+                <p>Hello world</p>
+                <p>Hello world</p>
+                <p>Hello world</p>
+                <p>Hello world</p>
+                <p>Hello world</p>
+                <p>Hello world</p>
+                <p>Hello world</p>
+                <p>Hello world</p>
+                <label for="msg">Your Message:</label>
+                <textarea name="msg" id="msg" ></textarea>
+                <p>Best,</p>
+                <label for="name">Name:</label>
+                <input type="text" id="name">
+                <label for="email">Email:</label>
+                <input type="text" id="email">
+                <input type="submit" value="Now, I send. Thanks!"> -->
+
+            </form>
+        </div>
+    </div>
+</body>
+<script src="index.js"></script>
+</html>
